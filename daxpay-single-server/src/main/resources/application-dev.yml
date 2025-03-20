@@ -69,7 +69,6 @@ bootx-platform:
         - '/web/**'
         - '/h5/**'
         - '/css/**'
-        - '/**'
         - '/error'
         - '/favicon.ico'
     file-upload:
