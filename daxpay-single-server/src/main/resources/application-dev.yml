@@ -5,23 +5,23 @@ spring:
       datasource:
         master:
           # Postgresql连接
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://postgresql:5432/dax-pay-single?serverTimezone=Asia/Shanghai&autoReconnect=true&reWriteBatchedInserts=true
-          username: bootx
-          password: bootx123
-          # MySQL连接
-#          driver-class-name: com.mysql.cj.jdbc.Driver
-#          url: jdbc:mysql://mysql:3306/dax-pay-single?serverTimezone=GMT%2B8&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true
-#          username: root
+#          driver-class-name: org.postgresql.Driver
+#          url: jdbc:postgresql://postgresql:5432/dax-pay-single?serverTimezone=Asia/Shanghai&autoReconnect=true&reWriteBatchedInserts=true
+#          username: bootx
 #          password: bootx123
+          # MySQL连接
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/dax-pay-single?serverTimezone=GMT%2B8&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true
+          username: root
+          password: 88888888
       hikari:
         keepalive-time: 300000
   data:
     redis:
-      host: redis
+      host: 127.0.0.1
       port: 6379
-      database: 5
-      password: bootx123
+      database: 0
+      password:
       lettuce:
         pool:
           max-wait: 1000ms
@@ -87,8 +87,8 @@ dromara:
     local-plus:
       - platform: local
         enable-storage: true
-        base-path: /file/ # 基基础存储路径 前缀和结尾都必须为 /
-        storage-path: /data/files/ # 存储路径, 结尾必须为 /
+        base-path: /storage/ # 基基础存储路径 前缀和结尾都必须为 /
+        storage-path: /Users/zcg/Code/Temp/files/ # 存储路径, 结尾必须为 /
     # 例如 minio地址 http://127.0.0.1:9002  桶名称 daxpay, 拼接后的地址为 http://127.0.0.1:9002/daxpay/
     minio:
       - platform: minio

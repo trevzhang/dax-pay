@@ -38,6 +38,6 @@ public class FrontWebConfig implements WebMvcConfigurer {
         // 电脑端网页映射
         registry.addResourceHandler("/web/**").addResourceLocations("classpath:/static/web/");
         // 上传文件访问映射
-        registry.addResourceHandler("/storage/**").addResourceLocations("file:/data/files/");
+        registry.addResourceHandler("/storage/**").addResourceLocations("file:/Users/zcg/Code/Temp/files/storage/");
     }
 }
