@@ -10,10 +10,16 @@ import org.springframework.stereotype.Component;
  * @since 2025/4/7 14:37
  */
 @Component
-public class IgnoreFileStorageRouterCheck implements RouterCheck {
+public class IgnorePathRouterCheck implements RouterCheck {
     @Override
     public boolean check(Object handler) {
         String path = WebServletUtil.getPath();
-        return StringUtils.isNotBlank(path) && path.startsWith("/storage/");
+        if (StringUtils.isNotBlank(path)) {
+            return Boolean.FALSE;
+        }
+        if (path.startsWith("/storage/")) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
     }
 }
